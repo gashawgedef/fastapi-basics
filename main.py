@@ -21,6 +21,12 @@ async def get_list(id:int):
     return {"The id number is:":id}
 
 
+@app.get("/holiday/{id}")
+async def employee_detail(id: int):
+    return {"This holiday is: ": id}
+
+
+
 ####The following is creating Enums
 @app.get("/models/{model_name}")
 async def get_model(model_name: EnumName):
@@ -31,3 +37,6 @@ async def get_model(model_name: EnumName):
         return {"model_name": model_name, "message": "LeCNN all the images"}
 
     return {"model_name": model_name, "message": "Have some residuals"}
+
+
+###The foloowing is using query parameters
