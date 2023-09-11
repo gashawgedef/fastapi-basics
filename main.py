@@ -25,6 +25,9 @@ async def get_list(id:int):
 async def employee_detail(id: int):
     return {"This holiday is: ": id}
 
+@app.get("/awdamet/{id}")
+async def employee_detail(id: int):
+    return {"Melkam Awdamet": id}
 
 
 ####The following is creating Enums
