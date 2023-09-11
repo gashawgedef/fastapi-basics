@@ -29,6 +29,9 @@ async def employee_detail(id: int):
 async def employee_detail(id: int):
     return {"Melkam Awdamet": id}
 
+@app.get("/meskerem/{id}")
+async def employee_detail(id: int):
+    return {"This is Ethiopian New Year": id}
 
 ####The following is creating Enums
 @app.get("/models/{model_name}")
