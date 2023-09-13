@@ -1,5 +1,12 @@
 from fastapi import FastAPI
 from enum import Enum
+from pydantic import BaseModel
+
+class Report(BaseModel):
+    start_date:str
+    description:str
+    quantity:int
+    unit_price:float|None=None
 
 
 class EnumName(str, Enum):
@@ -57,3 +64,9 @@ fake_items_db = [{"item_name": "Foo"}, {"item_name": "Bar"}, {"item_name": "Baz"
 @app.get("/gashity/")
 async def read_item(skip: int = 0, limit: int = 10):
     return fake_items_db[skip : skip + limit]
+
+
+#Post Request Body
+@app.post('/reports')
+async def create_report(report:Report):
+    return report
